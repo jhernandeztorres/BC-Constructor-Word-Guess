@@ -1,19 +1,20 @@
-class Letter {
-    constructor(letter){
-        // string to store underline for letters
+function Letter(letter) {
         this.letter = letter;
-        // boolean to store if letter has been guessed
-        this.guessed = false;
-        
+        this.isGuessed = false;
+
+        this.getCharacter = function () {
+            if (!this.isGuessed) {
+                return "_";
+            } else {
+                return this.letter;
+            }
+        }
+
+        this.checkLetter = function (guess) {
+            if (guess === this.letter) {
+                this.isGuessed = true;
+            }
+        }
     }
-        // function to return underlying character if letter has been guessed 
-            // or shows underline if letter has not been guessed
-        incorrectGuess(){
 
-        }
-        // function that takes a character as an argument and checks it against
-            // the underlined character, updating boolean to true if guessed correctly
-        correctGuess(){
-
-        }
-}
+module.exports = Letter;
