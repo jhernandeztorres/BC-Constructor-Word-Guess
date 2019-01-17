@@ -21,7 +21,7 @@ function Word(word){
     this.update = function(){
         let printedWord = "";
         this.letters.forEach(letter => {
-            printedWord += letter.getCharacter() + " ";
+            printedWord += letter.getLetter() + " ";
         });
         return printedWord;
     }
